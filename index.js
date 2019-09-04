@@ -4,6 +4,16 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
 const router = require('./router');
+const mongoose = require('mongoose');
+
+mongoose.connect("mongodb://localhost/auth", { useNewUrlParser: true });
+ 
+const connection = mongoose.connection;
+ 
+connection.on("connected", function() {
+  console.log("connected to db");
+});
+
 
 app.use(morgan('dev'));
 app.use(bodyParser.json({ type: '*/*' }));
