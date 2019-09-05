@@ -1,3 +1,7 @@
-This is a boilerplate express authentication server for web and mobile apps.
+# This is a boilerplate express authentication server for web and mobile apps.
 
-Run npm install to install all dependencies, then run npm run dev to start the server.
+## Instructions:
+
+Run npm install to install all dependencies.
+Make a config.js to store your secret key value pair.
+Install MongoDB if you do not already have it installed or optionally configure Mongo Atlas.
