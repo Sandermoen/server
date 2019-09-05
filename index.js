@@ -6,14 +6,14 @@ const app = express();
 const router = require('./router');
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost/auth", { useNewUrlParser: true });
- 
-const connection = mongoose.connection;
- 
-connection.on("connected", function() {
-  console.log("connected to db");
-});
+mongoose.connect('mongodb://localhost/auth', { useNewUrlParser: true });
+mongoose.set('useCreateIndex', true); // Prevent deprecation warning
 
+const connection = mongoose.connection;
+
+connection.on('connected', function() {
+  console.log('connected to db');
+});
 
 app.use(morgan('dev'));
 app.use(bodyParser.json({ type: '*/*' }));
